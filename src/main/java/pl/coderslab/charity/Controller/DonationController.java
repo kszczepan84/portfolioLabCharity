@@ -13,7 +13,7 @@ import pl.coderslab.charity.Entity.Donation;
 public class DonationController {
 
     @GetMapping("/add")
-    public String addDonation(Model model) {
+    public String addDonation(Model model ) {
         model.addAttribute("donation", new Donation());
         return "donation/form";
     }
