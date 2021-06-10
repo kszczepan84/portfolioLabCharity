@@ -163,6 +163,8 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$stepInstructions[0].parentElement.parentElement.hidden = this.currentStep >= 5;
       this.$step.parentElement.hidden = this.currentStep >= 5;
 
+
+      // var inputVal = document.getElementById("donationQuantity").value;
       // TODO: get data from inputs and show them in summary
     }
 

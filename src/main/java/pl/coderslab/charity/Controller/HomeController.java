@@ -1,4 +1,4 @@
-package pl.coderslab.charity;
+package pl.coderslab.charity.Controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -25,7 +25,9 @@ public class HomeController {
         Integer bagQuantity=0;
         Integer donationsQuantity=0;
         for ( Donation donation:donations){
-            bagQuantity  += donation.getQuantity();
+            if(donation.getQuantity()!=null){
+                bagQuantity  += donation.getQuantity();
+            }
             donationsQuantity += 1;        }
         model.addAttribute("bagQuantity", bagQuantity);
         model.addAttribute("donationsQuantity", donationsQuantity);
