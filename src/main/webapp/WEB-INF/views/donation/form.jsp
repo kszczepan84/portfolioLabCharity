@@ -62,50 +62,50 @@
                     <%--------------------------------------------------------------------------------------------------------------------------------%>
                                     <div class="form-group form-group--checkbox">
                                         <label>
-                                            <form:radiobutton
+                                            <form:radiobutton id="categories0"
                                                     path="categories"
                                                     value="${categories[0]}"
 
                                             />
                                             <span class="checkbox radio"></span>
-                                            <span class="description"
+                                            <span class="description" id="categories0name"
                                             >${categories[0].name}</span>
                                         </label>
                                     </div>
 
                                     <div class="form-group form-group--checkbox">
                                         <label>
-                                            <form:radiobutton
+                                            <form:radiobutton id="categories1"
 
                                                     path="categories"
                                                     value="${categories[1]}"
                                             />
                                             <span class="checkbox radio"></span>
-                                            <span class="description">${categories[1].name}</span>
+                                            <span class="description" id="categories1name">${categories[1].name}</span>
                                         </label>
                                     </div>
 
                                     <div class="form-group form-group--checkbox">
                                         <label>
-                                            <form:radiobutton path="categories" value="${categories[2]}"/>
+                                            <form:radiobutton id="categories2" path="categories" value="${categories[2]}"/>
                                             <span class="checkbox radio"></span>
-                                            <span class="description">${categories[2].name}</span>
+                                            <span class="description" id="categories2name">${categories[2].name}</span>
                                         </label>
                                     </div>
 
                                     <div class="form-group form-group--checkbox">
                                         <label>
-                                            <form:radiobutton path="categories" value="${categories[3]}"/>
+                                            <form:radiobutton id="categories3" path="categories" value="${categories[3]}"/>
                                             <span class="checkbox radio"></span>
-                                            <span class="description">${categories[3].name}</span>
+                                            <span class="description" id="categories3name">${categories[3].name}</span>
                                         </label>
                                     </div>
 
                                     <div class="form-group form-group--checkbox">
                                         <label>
-                                            <form:radiobutton path="categories" value="${categories[4]}"/>
+                                            <form:radiobutton path="categories"  id="categories4" value="${categories[4]}"/>
                                             <span class="checkbox radio"></span>
-                                            <span class="description">${categories[4].name}</span>
+                                            <span class="description" id="categories4name">${categories[4].name}</span>
                                         </label>
                                     </div>
 
@@ -118,11 +118,11 @@
 
                         <!-- STEP 2 -->
                         <div data-step="2">
-                            <h3>Podaj liczbę worków, w które spakowałeś/aś rzeczy:</h3>
+                            <h3>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h3>
 
                             <div class="form-group form-group--inline">
                                 <label>
-                                    Liczba ${quantity} worków:
+                                    Liczba 60l worków:
                                     <form:input type="number" path="quantity" step="1" min="1"
                                                 id="donationQuantity"/>
                                 </label>
@@ -141,10 +141,10 @@
 
                 <div class="form-group form-group--checkbox">
                     <label>
-                        <form:radiobutton path="institution" value="${institution[0]}"/>
+                        <form:radiobutton path="institution" value="${institution[0]}" id="institution0"/>
                         <span class="checkbox radio"></span>
                         <span class="description">
-                  <div class="title">${institution[0].name}</div>
+                  <div class="title" id="institution0title">${institution[0].name}</div>
                   <div class="subtitle">
                           ${institution[0].description}
                   </div>
@@ -154,10 +154,10 @@
 
                 <div class="form-group form-group--checkbox">
                     <label>
-                        <form:radiobutton path="institution" value="${institution[1]}"/>
+                        <form:radiobutton path="institution" value="${institution[1]}" id="institution1"/>
                         <span class="checkbox radio"></span>
                         <span class="description">
-                  <div class="title">${institution[1].name}</div>
+                  <div class="title" id="institution1title">${institution[1].name}</div>
                   <div class="subtitle">
                           ${institution[1].description}
                   </div>
@@ -167,10 +167,10 @@
 
                 <div class="form-group form-group--checkbox">
                     <label>
-                        <form:radiobutton path="institution" value="${institution[2]}"/>
+                        <form:radiobutton path="institution" value="${institution[2]}" id="institution2"/>
                         <span class="checkbox radio"></span>
                         <span class="description">
-                  <div class="title">${institution[2].name}</div>
+                  <div class="title" id="institution2title">${institution[2].name}</div>
                   <div class="subtitle">
                           ${institution[2].description}
                   </div>
@@ -180,10 +180,10 @@
 
                 <div class="form-group form-group--checkbox">
                     <label>
-                        <form:radiobutton path="institution" value="${institution[3]}"/>
+                        <form:radiobutton path="institution" value="${institution[3]}" id="institution3"/>
                         <span class="checkbox radio"></span>
                         <span class="description">
-                  <div class="title">${institution[3].name}</div>
+                  <div class="title" id="institution3title">${institution[3].name}</div>
                   <div class="subtitle">
                           ${institution[3].description}
                   </div>
@@ -205,22 +205,22 @@
                     <div class="form-section--column">
                         <h4>Adres odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Ulica <form:input type="text" path="street"/> </label>
+                            <label> Ulica <form:input type="text" path="street" id="streetNameInput"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> Miasto <form:input type="text" path="city"/> </label>
+                            <label> Miasto <form:input type="text" path="city" id="cityNameInput"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Kod pocztowy <form:input type="text" path="zipCode"/>
+                                Kod pocztowy <form:input type="text" path="zipCode" id="zipCodeInput"/>
                             </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Numer telefonu <input type="phone" name="phone"/>
+                                Numer telefonu <input type="phone" name="phone" id="phoneInput"/>
                             </label>
                         </div>
                     </div>
@@ -228,18 +228,18 @@
                     <div class="form-section--column">
                         <h4>Termin odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Data <form:input type="date" path="pickUpDate"/> </label>
+                            <label> Data <form:input type="date" path="pickUpDate" id="pickUpDateInput"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> Godzina <form:input type="time" path="pickUpTime"/>
+                            <label> Godzina <form:input type="time" path="pickUpTime" id="pickUpTimeInput"/>
                             </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
                                 Uwagi dla kuriera
-                                <form:textarea path="pickUpComment" rows="5"/>
+                                <form:textarea path="pickUpComment" rows="5" id="pickUpCommentInput"/>
                             </label>
                         </div>
                     </div>
@@ -260,16 +260,16 @@
                         <ul>
                             <li>
                                 <span class="icon icon-bag"></span>
-                                <span class="summary--text"
-                                >4 worki ubrań w dobrym stanie dla dzieci</span
+                                <span class="summary--text">
+                                    <span id="donationQuantityP"></span> worki <span id="categoryInput"></span></span
                                 >
                             </li>
 
                             <li>
                                 <span class="icon icon-hand"></span>
                                 <span class="summary--text"
-                                >Dla fundacji "Mam marzenie" w Warszawie</span
-                                >
+<%--                                >Dla fundacji "Mam marzenie" w Warszawie</span>--%>
+                                >Dla: <span id="institutionValue"></span></span>
                             </li>
                         </ul>
                     </div>
@@ -278,19 +278,19 @@
                         <div class="form-section--column">
                             <h4>Adres odbioru:</h4>
                             <ul>
-                                <li>Prosta 51</li>
-                                <li>Warszawa</li>
-                                <li>99-098</li>
-                                <li>123 456 789</li>
+                                <li id="streetName">Prosta 51</li>
+                                <li id="cityName">Warszawa</li>
+                                <li id="zipCodeName">99-098</li>
+                                <li id="phone">123 456 789</li>
                             </ul>
                         </div>
 
                         <div class="form-section--column">
                             <h4>Termin odbioru:</h4>
                             <ul>
-                                <li>13/12/2018</li>
-                                <li>15:40</li>
-                                <li>Brak uwag</li>
+                                <li id="pickUpDate">13/12/2018</li>
+                                <li id="pickUpTime">15:40</li>
+                                <li id="comments">Brak uwag</li>
                             </ul>
                         </div>
                     </div>

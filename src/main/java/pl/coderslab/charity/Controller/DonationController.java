@@ -34,6 +34,6 @@ public class DonationController {
     @PostMapping("/add")
     public String addDonationPost(@Valid Donation donation,BindingResult result){
         donationRepository.save(donation);
-        return "donation/form";
+        return "donation/form-confirmation";
     }
 }
