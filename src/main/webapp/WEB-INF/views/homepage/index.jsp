@@ -88,7 +88,7 @@
 
 
             <c:forEach items="${institutionList}" var="institution" varStatus="status">
-                <c:if test="${status.index eq 0}"   >
+                <c:if test="${status.index mod 2 == 0}">
                     <li>
                     <div class="col">
                         <div class="title">${institution.name}</div>
@@ -96,7 +96,7 @@
                     </div>
                 </c:if>
 
-                <c:if test="${status.index eq 1}"   >
+                <c:if test="${status.index mod 2 != 0}">
                     <div class="col">
                         <div class="title">${institution.name}</div>
                         <div class="subtitle">${institution.description}</div>
@@ -104,21 +104,21 @@
                     </li>
                 </c:if>
 
-                <c:if test="${status.index eq 2}"   >
-                    <li>
-                    <div class="col">
-                        <div class="title">${institution.name}</div>
-                        <div class="subtitle">${institution.description}</div>
-                    </div>
-                </c:if>
+<%--                <c:if test="${status.index eq 2}"   >--%>
+<%--                    <li>--%>
+<%--                    <div class="col">--%>
+<%--                        <div class="title">${institution.name}</div>--%>
+<%--                        <div class="subtitle">${institution.description}</div>--%>
+<%--                    </div>--%>
+<%--                </c:if>--%>
 
-                <c:if test="${status.index eq 3}"   >
-                    <div class="col">
-                        <div class="title">${institution.name}</div>
-                        <div class="subtitle">${institution.description}</div>
-                    </div>
-                    </li>
-                </c:if>
+<%--                <c:if test="${status.index eq 3}"   >--%>
+<%--                    <div class="col">--%>
+<%--                        <div class="title">${institution.name}</div>--%>
+<%--                        <div class="subtitle">${institution.description}</div>--%>
+<%--                    </div>--%>
+<%--                    </li>--%>
+<%--                </c:if>--%>
             </c:forEach>
         </ul>
 

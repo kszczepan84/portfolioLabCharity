@@ -62,12 +62,12 @@
                     <%--------------------------------------------------------------------------------------------------------------------------------%>
                                     <div class="form-group form-group--checkbox">
                                         <label>
-                                            <form:radiobutton id="categories0"
-                                                    path="categories"
+                                            <input type="checkbox" id="categories0"
+                                                    name="categories"
                                                     value="${categories[0]}"
 
                                             />
-                                            <span class="checkbox radio"></span>
+                                            <span class="checkbox"></span>
                                             <span class="description" id="categories0name"
                                             >${categories[0].name}</span>
                                         </label>
@@ -75,36 +75,36 @@
 
                                     <div class="form-group form-group--checkbox">
                                         <label>
-                                            <form:radiobutton id="categories1"
+                                            <input type="checkbox" id="categories1"
 
-                                                    path="categories"
+                                                    name="categories"
                                                     value="${categories[1]}"
                                             />
-                                            <span class="checkbox radio"></span>
+                                            <span class="checkbox"></span>
                                             <span class="description" id="categories1name">${categories[1].name}</span>
                                         </label>
                                     </div>
 
                                     <div class="form-group form-group--checkbox">
                                         <label>
-                                            <form:radiobutton id="categories2" path="categories" value="${categories[2]}"/>
-                                            <span class="checkbox radio"></span>
+                                            <input type="checkbox" id="categories2" name="categories" value="${categories[2]}"/>
+                                            <span class="checkbox"></span>
                                             <span class="description" id="categories2name">${categories[2].name}</span>
                                         </label>
                                     </div>
 
                                     <div class="form-group form-group--checkbox">
                                         <label>
-                                            <form:radiobutton id="categories3" path="categories" value="${categories[3]}"/>
-                                            <span class="checkbox radio"></span>
+                                            <input type="checkbox" id="categories3" name="categories" value="${categories[3]}"/>
+                                            <span class="checkbox"></span>
                                             <span class="description" id="categories3name">${categories[3].name}</span>
                                         </label>
                                     </div>
 
                                     <div class="form-group form-group--checkbox">
                                         <label>
-                                            <form:radiobutton path="categories"  id="categories4" value="${categories[4]}"/>
-                                            <span class="checkbox radio"></span>
+                                            <input type="checkbox" name="categories"  id="categories4" value="${categories[4]}"/>
+                                            <span class="checkbox"></span>
                                             <span class="description" id="categories4name">${categories[4].name}</span>
                                         </label>
                                     </div>
@@ -220,7 +220,7 @@
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Numer telefonu <input type="phone" name="phone" id="phoneInput"/>
+                                Numer telefonu <form:input type="text" path="phoneNr" id="phoneInput"/>
                             </label>
                         </div>
                     </div>
@@ -261,7 +261,7 @@
                             <li>
                                 <span class="icon icon-bag"></span>
                                 <span class="summary--text">
-                                    <span id="donationQuantityP"></span> worki <span id="categoryInput"></span></span
+                                    <span id="donationQuantityP"></span> worki zawierające: <span id="categoryInput"></span></span
                                 >
                             </li>
 

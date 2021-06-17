@@ -182,23 +182,43 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             document.getElementById("institutionValue").innerText = institution;
 
+            const categories = [];
+
             if (document.getElementById('categories0').checked) {
-                var category = document.getElementById('categories0name').innerText;
+               categories.push(document.getElementById('categories0name').innerText);
             }
+            // if (document.getElementById('categories1').checked) {
+            //     var category1 = document.getElementById('categories1name').innerText;
             if (document.getElementById('categories1').checked) {
-                var category = document.getElementById('categories1name').innerText;
+                categories.push(document.getElementById('categories1name').innerText);
             }
             if (document.getElementById('categories2').checked) {
-                var category = document.getElementById('categories2name').innerText;
+                categories.push(document.getElementById('categories2name').innerText);
             }
             if (document.getElementById('categories3').checked) {
-                var category = document.getElementById('categories3name').innerText;
+                categories.push(document.getElementById('categories3name').innerText);
+            }
+            if (document.getElementById('categories4').checked) {
+                categories.push(document.getElementById('categories4name').innerText);
             }
 
-            if (document.getElementById('categories4').checked) {
-                var category = document.getElementById('categories4name').innerText;
-            }
-            document.getElementById("categoryInput").innerText = category;
+            // let text = "<ul>";
+            // function myFunction(value) {
+            //     text += "<li>" + value + "</li>";
+            // }
+            // myFunction(el);
+
+            // document.getElementById("categoryInput").innerText
+            document.getElementById("categoryInput").innerHTML = categories + "<br>";
+            // function myFunction(item, index) {
+            //     document.getElementById("categoryInput").innerHTML += index + ":" + item + "<br>";
+            // }
+            //
+            // categories.forEach(myFunction);
+
+            // categories.forEach(el=>{
+            //  let value= document.getElementById("categoryInput").innerHTML;
+            // });
 
             var streetNameInput = document.getElementById("streetNameInput").value;
             document.getElementById("streetName").innerText = streetNameInput;
@@ -221,6 +241,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var pickUpCommentInput = document.getElementById("pickUpCommentInput").value;
             document.getElementById("comments").innerText = pickUpCommentInput;
+
+            var phoneInput = document.getElementById("phoneInput").value;
+            document.getElementById("phone").innerText = phoneInput;
 
         }
 
