@@ -60,11 +60,12 @@
                     <%--                                    </c:forEach>--%>
 
                     <%--------------------------------------------------------------------------------------------------------------------------------%>
-                                    <div class="form-group form-group--checkbox">
+
+                <div class="form-group form-group--checkbox">
                                         <label>
                                             <input type="checkbox" id="categories0"
                                                     name="categories"
-                                                    value="${categories[0]}"
+                                                    value="${categories[0].id}"
 
                                             />
                                             <span class="checkbox"></span>
@@ -78,7 +79,7 @@
                                             <input type="checkbox" id="categories1"
 
                                                     name="categories"
-                                                    value="${categories[1]}"
+                                                    value="${categories[1].id}"
                                             />
                                             <span class="checkbox"></span>
                                             <span class="description" id="categories1name">${categories[1].name}</span>
@@ -87,7 +88,7 @@
 
                                     <div class="form-group form-group--checkbox">
                                         <label>
-                                            <input type="checkbox" id="categories2" name="categories" value="${categories[2]}"/>
+                                            <input type="checkbox" id="categories2" name="categories" value="${categories[2].id}"/>
                                             <span class="checkbox"></span>
                                             <span class="description" id="categories2name">${categories[2].name}</span>
                                         </label>
@@ -95,7 +96,7 @@
 
                                     <div class="form-group form-group--checkbox">
                                         <label>
-                                            <input type="checkbox" id="categories3" name="categories" value="${categories[3]}"/>
+                                            <input type="checkbox" id="categories3" name="categories" value="${categories[3].id}"/>
                                             <span class="checkbox"></span>
                                             <span class="description" id="categories3name">${categories[3].name}</span>
                                         </label>
@@ -103,7 +104,7 @@
 
                                     <div class="form-group form-group--checkbox">
                                         <label>
-                                            <input type="checkbox" name="categories"  id="categories4" value="${categories[4]}"/>
+                                            <input type="checkbox" name="categories"  id="categories4" value="${categories[4].id}"/>
                                             <span class="checkbox"></span>
                                             <span class="description" id="categories4name">${categories[4].name}</span>
                                         </label>

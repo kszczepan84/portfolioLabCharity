@@ -61,7 +61,7 @@
         </div>
     </div>
 
-    <a href="#" class="btn btn--large">Załóż konto</a>
+    <a href="<c:url value="/user/register"/>" class="btn btn--large">Załóż konto</a>
 </section>
 
 <section class="about-us">
@@ -155,6 +155,6 @@
 </section>
 <c:import url="/WEB-INF/views/homepage/footer.jsp"/>
 
-<script src="<c:url value="resources/js/app.js"/>"></script>
+<script src="<c:url value="/resources/js/app.js"/>"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <%--<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>--%>
 <!DOCTYPE html>
 <html lang="pl">
-<header class="header--main-page">
+<header class="header">
     <nav class="container container--70">
         <ul class="nav--actions">
             <li><a href="" class="btn btn--small btn--without-border">Zaloguj</a></li>
@@ -21,12 +21,12 @@
         </ul>
     </nav>
 
-    <div class="slogan container container--90">
-        <div class="slogan--item">
-            <h1>
-                Zacznij pomagać!<br/>
-                Oddaj niechciane rzeczy w zaufane ręce
-            </h1>
-        </div>
-    </div>
+<%--    <div class="slogan container container--90">--%>
+<%--        <div class="slogan--item">--%>
+<%--            <h1>--%>
+<%--                Zacznij pomagać!<br/>--%>
+<%--                Oddaj niechciane rzeczy w zaufane ręce--%>
+<%--            </h1>--%>
+<%--        </div>--%>
+<%--    </div>--%>
 </header>
