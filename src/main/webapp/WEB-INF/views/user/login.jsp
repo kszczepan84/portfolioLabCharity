@@ -15,31 +15,23 @@
 </head>
 <body>
 <c:import url="/WEB-INF/views/user/header.jsp"/>
-
 <section class="login-page">
-    <h2>Załóż konto</h2>
-    <form:form modelAttribute="user" method="post">
+    <h2>Zaloguj się</h2>
+    <form method="post">
         <div class="form-group">
-            <form:input type="text" path="firstName" placeholder="Imię" />
+            <input type="email" name="email" placeholder="Email" />
         </div>
         <div class="form-group">
-            <form:input type="text" path="lastName" placeholder="Nazwisko" />
+            <input type="password" name="password" placeholder="Hasło" />
+            <a href="#" class="btn btn--small btn--without-border reset-password">Przypomnij hasło</a>
         </div>
-        <div class="form-group">
-            <form:input type="email" path="email" placeholder="Email" />
-        </div>
-        <div class="form-group">
-            <form:input type="password" path="password" placeholder="Hasło" />
-        </div>
-<%--        <div class="form-group">--%>
-<%--            <form:input type="password" path="password2" placeholder="Powtórz hasło" />--%>
-<%--        </div>--%>
 
         <div class="form-group form-group--buttons">
-            <a href="<c:url value="/user/login"/>" class="btn btn--without-border">Zaloguj się</a>
-            <button class="btn" type="submit">Załóż konto</button>
+            <a href="<c:url value="/user/register"/>" class="btn btn--without-border">Załóż konto</a>
+            <button class="btn" type="submit">Zaloguj się</button>
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </div>
-    </form:form>
+    </form>
 </section>
 
 <c:import url="/WEB-INF/views/homepage/footer.jsp"/>

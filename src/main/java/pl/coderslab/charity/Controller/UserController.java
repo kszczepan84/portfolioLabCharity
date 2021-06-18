@@ -1,6 +1,7 @@
 package pl.coderslab.charity.Controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import pl.coderslab.charity.Repository.UserRepository;
 public class UserController {
 
     private final UserRepository userRepository;
+    private final BCryptPasswordEncoder passwordEncoder;
 
     @GetMapping("/register")
     public String addUser(Model model ) {
@@ -24,7 +26,13 @@ public class UserController {
 
     @PostMapping("/register")
     public String addUserPost(User user){
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
         return "redirect:/";
+    }
+
+    @GetMapping("/login")
+    public String loginUser() {
+        return "/user/login";
     }
 }

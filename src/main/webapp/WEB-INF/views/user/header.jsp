@@ -7,7 +7,7 @@
 <header class="header">
     <nav class="container container--70">
         <ul class="nav--actions">
-            <li><a href="" class="btn btn--small btn--without-border">Zaloguj</a></li>
+            <li><a href="<c:url value="/user/login"/>" class="btn btn--small btn--without-border">Zaloguj</a></li>
             <li><a href="<c:url value="/user/register"/>" class="btn btn--small btn--highlighted">Załóż konto</a></li>
         </ul>
 
