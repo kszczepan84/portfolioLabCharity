@@ -19,11 +19,13 @@
       <nav class="container container--70">
         <ul class="nav--actions">
           <li class="logged-user">
-            Witaj Agata
+            Witaj, <%
+            session.getAttribute("userFirstname");
+          %>
             <ul class="dropdown">
-              <li><a href="#">Profil</a></li>
-              <li><a href="#">Moje zbiórki</a></li>
-              <li><a href="#">Wyloguj</a></li>
+              <li><a href="<c:url value="/user/profile"/>">Profil</a></li>
+              <li><a href="<c:url value="/user/donations"/>">Moje zbiórki</a></li>
+              <li><a href="<c:url value="/logout"/>">Wyloguj</a></li>
             </ul>
           </li>
         </ul>

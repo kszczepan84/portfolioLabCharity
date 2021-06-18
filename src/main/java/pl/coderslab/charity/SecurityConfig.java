@@ -27,10 +27,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/**").permitAll()
-                .antMatchers("/user/**").permitAll()
+                .antMatchers("/user/**").authenticated()
                 .and()
                 .formLogin()
-                .defaultSuccessUrl("/", true)
+                .defaultSuccessUrl("/user/successLogin", true)
                 .loginPage("/user/login")
                 .usernameParameter("email")
                 .permitAll()

@@ -28,11 +28,15 @@
         <div class="form-group">
             <form:input type="email" path="email" placeholder="Email" />
         </div>
+<%--        <div class="form-group">--%>
+<%--            <form:input type="password" path="password" placeholder="Hasło" id="password" onkeyup='check();'/>--%>
+<%--        </div>--%>
         <div class="form-group">
-            <form:input type="password" path="password" placeholder="Hasło" />
+            <form:input type="password" path="password" placeholder="Hasło" id="password"/>
         </div>
 <%--        <div class="form-group">--%>
-<%--            <form:input type="password" path="password2" placeholder="Powtórz hasło" />--%>
+<%--            <input type="password" name="password2" placeholder="Powtórz hasło" id="password2" onkeyup='check()'/>--%>
+<%--            <span id="message"></span>--%>
 <%--        </div>--%>
 
         <div class="form-group form-group--buttons">
@@ -44,6 +48,6 @@
 
 <c:import url="/WEB-INF/views/homepage/footer.jsp"/>
 
-<script src="<c:url value="resources/js/app.js"/>"></script>
+<script src="<c:url value="/resources/js/app.js"/>"></script>
 </body>
 </html>

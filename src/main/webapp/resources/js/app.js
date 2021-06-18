@@ -187,8 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (document.getElementById('categories0').checked) {
                categories.push(document.getElementById('categories0name').innerText);
             }
-            // if (document.getElementById('categories1').checked) {
-            //     var category1 = document.getElementById('categories1name').innerText;
+
             if (document.getElementById('categories1').checked) {
                 categories.push(document.getElementById('categories1name').innerText);
             }
@@ -202,23 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 categories.push(document.getElementById('categories4name').innerText);
             }
 
-            // let text = "<ul>";
-            // function myFunction(value) {
-            //     text += "<li>" + value + "</li>";
-            // }
-            // myFunction(el);
-
-            // document.getElementById("categoryInput").innerText
             document.getElementById("categoryInput").innerHTML = categories + "<br>";
-            // function myFunction(item, index) {
-            //     document.getElementById("categoryInput").innerHTML += index + ":" + item + "<br>";
-            // }
-            //
-            // categories.forEach(myFunction);
-
-            // categories.forEach(el=>{
-            //  let value= document.getElementById("categoryInput").innerHTML;
-            // });
 
             var streetNameInput = document.getElementById("streetNameInput").value;
             document.getElementById("streetName").innerText = streetNameInput;
@@ -255,5 +238,23 @@ document.addEventListener("DOMContentLoaded", function () {
     if (form !== null) {
         new FormSteps(form);
     }
+
+    /**
+     * Password retype check
+     */
+
+    // function check() {
+    //     const password = document.getElementById("password").value;
+    //     const confirm=document.getElementById("password2").value;
+    //     if ( password ===confirm){
+    //         document.getElementById("message").style.color = "green";
+    //         document.getElementById("message").innerHTML = "matching";
+    //     } else {
+    //         document.getElementById('message').style.color = 'red';
+    //         document.getElementById('message').innerHTML = 'not matching';
+    //     }
+    // }
+
+
 })
 ;
