@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import pl.coderslab.charity.Entity.Admin;
 import pl.coderslab.charity.Entity.Role;
 import pl.coderslab.charity.Entity.User;
@@ -48,6 +49,12 @@ public class AdminController {
     @RequestMapping("/successLogin")
     public String successLogin() {
         return "redirect:/admin/index";
+    }
+
+    @RequestMapping("/index")
+    @ResponseBody
+    public String index(){
+        return "welcome page";
     }
 
 }

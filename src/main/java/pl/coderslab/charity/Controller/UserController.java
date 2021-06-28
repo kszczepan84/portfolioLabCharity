@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import pl.coderslab.charity.Entity.Role;
 import pl.coderslab.charity.Entity.User;
 import pl.coderslab.charity.Repository.RoleRepository;
@@ -46,6 +47,12 @@ public class UserController {
     @RequestMapping("/successLogin")
     public String successLogin() {
         return "redirect:/";
+    }
+
+    @RequestMapping("/index")
+    @ResponseBody
+    public String index(){
+        return "welcome page";
     }
 
 }
