@@ -7,8 +7,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import pl.coderslab.charity.Entity.Admin;
 import pl.coderslab.charity.Entity.Role;
 import pl.coderslab.charity.Entity.User;
+import pl.coderslab.charity.Repository.AdminRepository;
 import pl.coderslab.charity.Repository.RoleRepository;
 import pl.coderslab.charity.Repository.UserRepository;
 
@@ -16,36 +18,36 @@ import java.util.Arrays;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/admin")
+public class AdminController {
 
-    private final UserRepository userRepository;
+    private final AdminRepository adminRepository;
     private final BCryptPasswordEncoder passwordEncoder;
     private final RoleRepository roleRepository;
 
     @GetMapping("/register")
-    public String addUser(Model model) {
-        model.addAttribute("user", new User());
-        return "user/register";
+    public String addAdmin(Model model) {
+        model.addAttribute("admin", new Admin());
+        return "admin/register";
     }
 
     @PostMapping("/register")
-    public String addUserPost(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        Role userRole = roleRepository.findByName("ROLE_USER");
-        user.setRoles(Arrays.asList(userRole));
-        userRepository.save(user);
+    public String addAdminPost(Admin admin) {
+        admin.setPassword(passwordEncoder.encode(admin.getPassword()));
+        Role adminRole = roleRepository.findByName("ROLE_ADMIN");
+        admin.setRoles(Arrays.asList(adminRole));
+        adminRepository.save(admin);
         return "redirect:/";
     }
 
     @GetMapping("/login")
-    public String loginUser() {
-        return "/user/login";
+    public String loginAdmin() {
+        return "/admin/login";
     }
 
     @RequestMapping("/successLogin")
     public String successLogin() {
-        return "redirect:/";
+        return "redirect:/admin/index";
     }
 
 }

@@ -3,10 +3,10 @@ package pl.coderslab.charity.Entity;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Set;
-
 @Entity
-public class User {
-    @Id
+public class Admin {
+
+    @javax.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
     private String firstName;
@@ -16,9 +16,9 @@ public class User {
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(
-            name = "users_roles",
+            name = "admins_roles",
             joinColumns = @JoinColumn(
-                    name = "user_id", referencedColumnName = "id"),
+                    name = "admin_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(
                     name = "role_id", referencedColumnName = "id"))
     private Collection<Role> roles;
