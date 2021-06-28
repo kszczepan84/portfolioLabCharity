@@ -165,67 +165,50 @@ document.addEventListener("DOMContentLoaded", function () {
             this.$step.parentElement.hidden = this.currentStep >= 5;
 
             // TODO: get data from inputs and show them in summary:
-            var donationQuantity = document.getElementById("donationQuantity").value;
+            const donationQuantity = document.getElementById("donationQuantity").value;
             document.getElementById("donationQuantityP").innerHTML = donationQuantity;
 
-            if (document.getElementById('institution0').checked) {
-                var institution = document.getElementById('institution0title').innerText;
-            }
-            if (document.getElementById('institution1').checked) {
-                var institution = document.getElementById('institution1title').innerText;
-            }
-            if (document.getElementById('institution2').checked) {
-                var institution = document.getElementById('institution2title').innerText;
-            }
-            if (document.getElementById('institution3').checked) {
-                var institution = document.getElementById('institution3title').innerText;
-            }
-            document.getElementById("institutionValue").innerText = institution;
 
-            const categories = [];
+            const institutions = document.querySelectorAll('input[name="institution"]');
+            let selectedInstitution;
+            for ( const institution of institutions){
+                if(institution.checked){
+                    selectedInstitution=institution.title;
+                    break;
+                }
+            }
+            document.getElementById("institutionValue").innerText = selectedInstitution;
 
-            if (document.getElementById('categories0').checked) {
-               categories.push(document.getElementById('categories0name').innerText);
-            }
 
-            if (document.getElementById('categories1').checked) {
-                categories.push(document.getElementById('categories1name').innerText);
-            }
-            if (document.getElementById('categories2').checked) {
-                categories.push(document.getElementById('categories2name').innerText);
-            }
-            if (document.getElementById('categories3').checked) {
-                categories.push(document.getElementById('categories3name').innerText);
-            }
-            if (document.getElementById('categories4').checked) {
-                categories.push(document.getElementById('categories4name').innerText);
+            const categories = document.querySelectorAll('input[name="categories"]');
+            let selectedCategory =[];
+            for ( const category of categories){
+                if(category.checked){
+                    selectedCategory.push(" "+category.title);
+                }
             }
 
-            document.getElementById("categoryInput").innerHTML = categories + "<br>";
+            document.getElementById("categoryInput").innerHTML = selectedCategory + "<br>";
 
-            var streetNameInput = document.getElementById("streetNameInput").value;
+            const streetNameInput = document.getElementById("streetNameInput").value;
             document.getElementById("streetName").innerText = streetNameInput;
 
-            var cityNameInput = document.getElementById("cityNameInput").value;
+            const cityNameInput = document.getElementById("cityNameInput").value;
             document.getElementById("cityName").innerText = cityNameInput;
 
-            var zipCodeInput = document.getElementById("zipCodeInput").value;
+            const zipCodeInput = document.getElementById("zipCodeInput").value;
             document.getElementById("zipCodeName").innerText = zipCodeInput;
 
-            var phoneInput = document.getElementById("phoneInput").value;
-            document.getElementById("phone").innerText = phoneInput;
-
-
-            var pickUpDateInput = document.getElementById("pickUpDateInput").value;
+            const pickUpDateInput = document.getElementById("pickUpDateInput").value;
             document.getElementById("pickUpDate").innerText = pickUpDateInput;
 
-            var pickUpTimeInput = document.getElementById("pickUpTimeInput").value;
+            const pickUpTimeInput = document.getElementById("pickUpTimeInput").value;
             document.getElementById("pickUpTime").innerText = pickUpTimeInput;
 
-            var pickUpCommentInput = document.getElementById("pickUpCommentInput").value;
+            const pickUpCommentInput = document.getElementById("pickUpCommentInput").value;
             document.getElementById("comments").innerText = pickUpCommentInput;
 
-            var phoneInput = document.getElementById("phoneInput").value;
+            const phoneInput = document.getElementById("phoneInput").value;
             document.getElementById("phone").innerText = phoneInput;
 
         }
