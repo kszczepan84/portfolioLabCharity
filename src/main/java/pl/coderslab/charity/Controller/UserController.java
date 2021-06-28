@@ -1,20 +1,14 @@
 package pl.coderslab.charity.Controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import pl.coderslab.charity.Entity.User;
 import pl.coderslab.charity.Repository.UserRepository;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 @Controller
 @RequiredArgsConstructor
@@ -43,7 +37,8 @@ public class UserController {
     }
 
     @RequestMapping("/successLogin")
-    public String successLogin(Authentication authentication, Model model, HttpServletRequest request, HttpServletResponse response) {
+    public String successLogin() {
         return "redirect:/";
     }
+
 }
