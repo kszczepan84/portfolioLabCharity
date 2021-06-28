@@ -1,6 +1,7 @@
 package pl.coderslab.charity.Controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -49,10 +50,34 @@ public class UserController {
         return "redirect:/";
     }
 
+    @GetMapping("/profile")
+    public String userEdit(Authentication authentication, Model model){
+        User currentUser= userRepository.findByEmail(authentication.getName());
+        model.addAttribute("user", currentUser);
+        return "/user/profile";
+    }
+
+    @PostMapping("/profile")
+    public String userEditSave(User user){
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        Role userRole = roleRepository.findByName("ROLE_USER");
+        user.setRoles(Arrays.asList(userRole));
+        userRepository.save(user);
+        return "redirect:/";
+    }
+
     @RequestMapping("/index")
     @ResponseBody
     public String index(){
         return "welcome page";
     }
+
+    @RequestMapping("/donations")
+    @ResponseBody
+    public String userDonate(){
+        return "działa podglad dotacji";
+    }
+
+
 
 }
