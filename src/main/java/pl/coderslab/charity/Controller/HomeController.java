@@ -52,7 +52,7 @@ public class HomeController {
         Collection<Role> roles=currentUser.getRoles();
         for(Role role:roles){
             if(role.getName().equals("ROLE_ADMIN")){
-                return "redirect:/admin/index";
+                return "redirect:/admin/main";
             }
         }
         return "redirect:/";
