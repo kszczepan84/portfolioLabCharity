@@ -26,6 +26,16 @@ public class Donation {
     private LocalTime pickUpTime;
     private String pickUpComment;
     private String phoneNr;
+    @ManyToOne
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public String getPhoneNr() {
         return phoneNr;
