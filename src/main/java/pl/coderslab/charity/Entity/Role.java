@@ -13,8 +13,6 @@ public class Role {
     @ManyToMany(mappedBy = "roles")
     private Collection<User> users;
 
-    @ManyToMany(mappedBy = "roles")
-    private Collection<Admin> admins;
 
     public Long getId() {
         return id;
@@ -40,11 +38,4 @@ public class Role {
         this.users = users;
     }
 
-    public Collection<Admin> getAdmins() {
-        return admins;
-    }
-
-    public void setAdmins(Collection<Admin> admins) {
-        this.admins = admins;
-    }
 }

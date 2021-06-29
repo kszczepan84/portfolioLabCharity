@@ -13,7 +13,7 @@
                 <c:choose>
                     <c:when test="${pageContext.request.userPrincipal.name != null}">
                         <li class="logged-user">
-                            Witaj,     <sec:authentication  property="principal.username"/>
+                            Witaj,     <sec:authentication  property="principal.firstname"/>
                             <ul class="dropdown">
                                 <li><a href="<c:url value="/user/profile"/>">Profil</a></li>
                                 <li><a href="<c:url value="/user/donations"/>">Moje zbiórki</a></li>
@@ -25,7 +25,7 @@
                         </li>
                     </c:when>
                     <c:otherwise>
-                        <li><a href="<c:url value="/user/login"/>"  class="btn btn--small btn--without-border">Zaloguj</a></li>
+                        <li><a href="<c:url value="/login"/>"  class="btn btn--small btn--without-border">Zaloguj</a></li>
                         <li><a href="<c:url value="/user/register"/>" class="btn btn--small btn--highlighted">Załóż konto</a></li>
                     </c:otherwise>
                 </c:choose>

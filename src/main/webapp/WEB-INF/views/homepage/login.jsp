@@ -27,8 +27,8 @@
         </div>
 
         <div class="form-group form-group--buttons">
-            <a href="<c:url value="/user/register"/>" class="btn btn--without-border">Załóż konto</a>
             <button class="btn" type="submit">Zaloguj się</button>
+            <a href="<c:url value="/user/register"/>" class="btn btn--without-border">Załóż konto</a>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </div>
     </form>

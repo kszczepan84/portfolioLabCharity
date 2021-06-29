@@ -13,18 +13,18 @@
     <link rel="stylesheet" href="<c:url value="resources/css/style.css"/>"/>
 </head>
 <body>
-<c:import url="/WEB-INF/views/homepage/header.jsp"/>
-
-Witaj, Panie
 
 
+Witaj, administratorze
 
 
 
 
 
 
-<c:import url="/WEB-INF/views/homepage/footer.jsp"/>
+
+
+
 
 <script src="<c:url value="/resources/js/app.js"/>"></script>
 </body>

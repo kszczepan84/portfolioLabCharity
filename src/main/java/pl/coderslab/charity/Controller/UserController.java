@@ -5,7 +5,10 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.charity.Entity.Donation;
 import pl.coderslab.charity.Entity.Role;
 import pl.coderslab.charity.Entity.User;
@@ -13,7 +16,6 @@ import pl.coderslab.charity.Repository.*;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
@@ -42,15 +44,7 @@ public class UserController {
         return "redirect:/";
     }
 
-    @GetMapping("/login")
-    public String loginUser() {
-        return "/user/login";
-    }
 
-    @RequestMapping("/successLogin")
-    public String successLogin() {
-        return "redirect:/";
-    }
 
     @GetMapping("/profile")
     public String userEdit(Authentication authentication, Model model){
@@ -95,16 +89,4 @@ public class UserController {
         return "redirect:/user/donations";
 
     }
-
-
-    @RequestMapping("/index")
-    @ResponseBody
-    public String index(){
-        return "welcome page";
-    }
-
-
-
-
-
 }
