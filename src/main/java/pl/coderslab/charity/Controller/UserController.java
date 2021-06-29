@@ -5,16 +5,15 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import pl.coderslab.charity.Entity.Donation;
 import pl.coderslab.charity.Entity.Role;
 import pl.coderslab.charity.Entity.User;
-import pl.coderslab.charity.Repository.RoleRepository;
-import pl.coderslab.charity.Repository.UserRepository;
+import pl.coderslab.charity.Repository.*;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
@@ -24,6 +23,9 @@ public class UserController {
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder passwordEncoder;
     private final RoleRepository roleRepository;
+    private final DonationRepository donationRepository;
+    private final CategoryRepository categoryRepository;
+    private final InstitutionRepository institutionRepository;
 
     @GetMapping("/register")
     public String addUser(Model model) {
@@ -66,17 +68,42 @@ public class UserController {
         return "redirect:/";
     }
 
+    @GetMapping("/donations")
+    public String userDonate(Authentication authentication, Model model){
+        User user= userRepository.findByEmail(authentication.getName());
+        List<Donation> allDonations = donationRepository.findAllByUser(user);
+        model.addAttribute("donations",allDonations);
+        return "/user/donations";
+    }
+    @GetMapping("/donation/delete/{id}")
+    public String deleteDonation(@PathVariable Long id){
+        donationRepository.deleteById(id);
+        return "redirect:/user/donations";
+    }
+
+    @GetMapping("/donation/edit/{id}")
+    public String editDonation(@PathVariable Long id,Model model){
+       model.addAttribute("donation",donationRepository.findById(id));
+        model.addAttribute("categories",categoryRepository.findAll());
+        model.addAttribute("institution",institutionRepository.findAll());
+        return "/user/donation_edit";
+    }
+
+    @PostMapping("/donation/edit")
+    public String editDonationPost(Donation donation){
+        donationRepository.save(donation);
+        return "redirect:/user/donations";
+
+    }
+
+
     @RequestMapping("/index")
     @ResponseBody
     public String index(){
         return "welcome page";
     }
 
-    @RequestMapping("/donations")
-    @ResponseBody
-    public String userDonate(){
-        return "działa podglad dotacji";
-    }
+
 
 
 
