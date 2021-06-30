@@ -1,7 +1,10 @@
 package pl.coderslab.charity;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
 import pl.coderslab.charity.Entity.User;
 
 import java.util.Collection;
@@ -51,7 +54,11 @@ public class SpringDataUserDetails implements UserDetails {
 
     @Override
     public boolean isAccountNonLocked() {
-        return true;
+        if(user.getEnabled()==1){
+            return true;
+        }
+        else return false;
+
     }
 
     @Override

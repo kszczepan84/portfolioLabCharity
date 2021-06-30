@@ -11,6 +11,8 @@ public interface UserRepository extends JpaRepository<User,Long> {
     User findByEmail(String email);
 
     @Query(value="SELECT user_id FROM users_roles INNER JOIN role r on users_roles.role_id = r.id WHERE r.name='ROLE_ADMIN'",nativeQuery = true)
-    List<Long> selectUserByRole();
+    List<Long> selectUserByRoleAdmin();
 
+    @Query(value="SELECT user_id FROM users_roles INNER JOIN role r on users_roles.role_id = r.id WHERE r.name='ROLE_USER'",nativeQuery = true)
+    List<Long> selectUserByRoleUser();
 }

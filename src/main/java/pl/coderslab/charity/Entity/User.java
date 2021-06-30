@@ -13,7 +13,7 @@ public class User {
     private String email;
     private String password;
 
-//    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
     @ManyToMany
     @JoinTable(
             name = "users_roles",
@@ -22,6 +22,15 @@ public class User {
             inverseJoinColumns = @JoinColumn(
                     name = "role_id", referencedColumnName = "id"))
     private Collection<Role> roles;
+    private int enabled;
+
+    public int getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(int enabled) {
+        this.enabled = enabled;
+    }
 
     public Collection<Role> getRoles() {
         return roles;

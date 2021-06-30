@@ -38,6 +38,7 @@ public class UserController {
     @PostMapping("/register")
     public String addUserPost(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setEnabled(1);
         Role userRole = roleRepository.findByName("ROLE_USER");
         user.setRoles(Arrays.asList(userRole));
         userRepository.save(user);
@@ -56,6 +57,7 @@ public class UserController {
     @PostMapping("/profile")
     public String userEditSave(User user){
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setEnabled(1);
         Role userRole = roleRepository.findByName("ROLE_USER");
         user.setRoles(Arrays.asList(userRole));
         userRepository.save(user);
