@@ -40,6 +40,7 @@
 
         <%--        <form action="form-confirmation.html" method="post">--%>
         <form:form modelAttribute="donation" method="post" action="/user/donation/edit">
+            <form:hidden path="status" value="${status.id}"/>
             <form:hidden path="id" value="${id}"/>
             <form:hidden path="user" value="${user.id}"/>
             <!-- STEP 1: class .active is switching steps -->

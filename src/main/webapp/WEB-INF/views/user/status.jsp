@@ -16,23 +16,19 @@
 <body>
 <c:import url="/WEB-INF/views/user/header.jsp"/>
 <section class="login-page">
-    <h2>Lista darów</h2>
-<c:forEach items="${donations}" var="donation">
+    <h2>Status daru</h2>
     <ul class="help--slides-items">
         <li>
             <div class="col">
-                <div class="title">nr ${donation.id}, przekazane dla: ${donation.institution}, ilość worków: ${donation.quantity},
-                miejsce odbioru w: ${donation.city} ${donation.street} ${donation.zipCode}, data odbioru: ${donation.pickUpDate}
-                    o godzinie: ${donation.pickUpTime}|
-                    <a href="<c:url value="/user/donation/edit/${donation.id}"/>">Edytuj</a>|
-                    <a href="<c:url value="/user/donation/delete/${donation.id}"/>">Usuń</a>|
-                    <a href="<c:url value="/user/donation/status/${donation.id}"/>">Sprawdź status</a>|
+                <div class="title">                 ${placed} ${placedDate}<br>
+                                                    ${received} ${receivedDate}<br>
+                                                    ${transferred} ${transferredDate}<br>
+                    Zmień status na: <a href="<c:url value="/user/donation/status/received/${donation.id}"/>">Odebrane przez kuriera</a>| <a href="<c:url value="/user/donation/status/transferred/${donation.id}"/>">Odebrane przez instytucję</a> <br>
 
                 </div>
             </div>
         </li>
     </ul>
-   </c:forEach>
 </section>
 
 <c:import url="/WEB-INF/views/homepage/footer.jsp"/>

@@ -28,6 +28,16 @@ public class Donation {
     private String phoneNr;
     @ManyToOne
     private User user;
+    @OneToMany
+    private List<Status> status;
+
+    public List<Status> getStatus() {
+        return status;
+    }
+
+    public void setStatus(List<Status> status) {
+        this.status = status;
+    }
 
     public User getUser() {
         return user;
