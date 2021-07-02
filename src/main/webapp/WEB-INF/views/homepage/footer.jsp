@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>--%>
 <%--<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>--%>
 <!DOCTYPE html>
@@ -8,7 +9,7 @@
     <div class="contact">
         <h2>Skontaktuj się z nami</h2>
         <h3>Formularz kontaktowy</h3>
-        <form class="form--contact">
+        <form class="form--contact" action="/message/send">
             <div class="form-group form-group--50"><input type="text" name="name" placeholder="Imię"/></div>
             <div class="form-group form-group--50"><input type="text" name="surname" placeholder="Nazwisko"/></div>
 
