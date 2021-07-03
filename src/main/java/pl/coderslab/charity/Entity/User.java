@@ -1,5 +1,7 @@
 package pl.coderslab.charity.Entity;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -22,13 +24,25 @@ public class User {
             inverseJoinColumns = @JoinColumn(
                     name = "role_id", referencedColumnName = "id"))
     private Collection<Role> roles;
-    private int enabled;
+    //    private int enabled;
+    @Type(type = "org.hibernate.type.NumericBooleanType")
+    private boolean enabled;
 
-    public int getEnabled() {
+
+//    public int getEnabled() {
+//        return enabled;
+//    }
+//
+//    public void setEnabled(int enabled) {
+//        this.enabled = enabled;
+//    }
+
+
+    public boolean isEnabled() {
         return enabled;
     }
 
-    public void setEnabled(int enabled) {
+    public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
 

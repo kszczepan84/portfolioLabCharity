@@ -89,7 +89,8 @@ public class AdminController {
     @PostMapping("/admins/add")
     public String addAdminPost(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setEnabled(1);
+//        user.setEnabled(1);
+        user.setEnabled(true);
         Role userRole = roleRepository.findByName("ROLE_ADMIN");
         user.setRoles(Arrays.asList(userRole));
         userRepository.save(user);
@@ -105,7 +106,8 @@ public class AdminController {
     @PostMapping("/admins/edit")
     public String editAdminPost(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setEnabled(1);
+//        user.setEnabled(1);
+        user.setEnabled(true);
         Role userRole = roleRepository.findByName("ROLE_ADMIN");
         user.setRoles(Arrays.asList(userRole));
         userRepository.save(user);
@@ -135,7 +137,8 @@ public class AdminController {
     @PostMapping("/users/edit")
     public String editUserPost(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setEnabled(1);
+//        user.setEnabled(1);
+        user.setEnabled(true);
         Role userRole = roleRepository.findByName("ROLE_USER");
         user.setRoles(Arrays.asList(userRole));
         userRepository.save(user);
@@ -151,7 +154,8 @@ public class AdminController {
     @GetMapping("/users/enable/{id}")
     public String enableUser(@PathVariable Long id) {
         User user = userRepository.findById(id).orElse(null);
-        user.setEnabled(1);
+//        user.setEnabled(1);
+        user.setEnabled(true);
         userRepository.save(user);
         return "redirect:/admin/users";
     }
@@ -159,7 +163,8 @@ public class AdminController {
     @GetMapping("/users/disable/{id}")
     public String disableUser(@PathVariable Long id) {
         User user = userRepository.findById(id).orElse(null);
-        user.setEnabled(0);
+//        user.setEnabled(0);
+        user.setEnabled(false);
         userRepository.save(user);
         return "redirect:/admin/users";
     }

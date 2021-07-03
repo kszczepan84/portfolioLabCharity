@@ -90,7 +90,7 @@
                                     <td>${user.email}</td>
                                     <td>${user.password}</td>
                                     <td><c:choose>
-                                        <c:when test="${user.enabled == 1}">
+                                        <c:when test="${user.enabled == true}">
                                             Odblokowany
                                         </c:when>
                                         <c:otherwise>

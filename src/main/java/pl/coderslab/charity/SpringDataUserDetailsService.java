@@ -19,6 +19,8 @@ public class SpringDataUserDetailsService implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;
+//    private AccountStatusUserDetailsChecker accountStatusUserDetailsChecker;
+
 
     @Override
     public UserDetails loadUserByUsername(String email) {
@@ -26,6 +28,13 @@ public class SpringDataUserDetailsService implements UserDetailsService {
         if (user == null) {
             throw new UsernameNotFoundException(email);
         }
+//        if ( user.getEnabled()!=1){
+//            try {
+//                throw new AccountLockedException("Account locked");
+//            } catch (AccountLockedException e) {
+//                e.printStackTrace();
+//            }
+//        }
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
         user.getRoles().forEach(r ->
                 grantedAuthorities.add(new SimpleGrantedAuthority(r.getName())));

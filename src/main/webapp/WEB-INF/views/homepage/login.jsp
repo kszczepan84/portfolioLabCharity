@@ -3,6 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -19,10 +20,24 @@
     <h2>Zaloguj się</h2>
     <form method="post">
         <div class="form-group">
-            <input type="email" name="email" placeholder="Email" />
+            <input type="email" name="email" placeholder="Email"/>
         </div>
         <div class="form-group">
-            <input type="password" name="password" placeholder="Hasło" />
+            <input type="password" name="password" placeholder="Hasło"/>
+            <br>
+
+
+            <%--            <c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">--%>
+            <%--                <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}"/>--%>
+            <%--            </c:if>--%>
+<%--            <c:forEach items="${errors}" var="error">--%>
+<%--                    ${error}--%>
+<%--            </c:forEach>--%>
+
+             <h3>${errorMessage} </h3>
+
+
+<%--            ${fn:replace(SPRING_SECURITY_LAST_EXCEPTION.message, 'Bad credentials', 'Username/Password are incorrect')}--%>
             <a href="#" class="btn btn--small btn--without-border reset-password">Przypomnij hasło</a>
         </div>
 

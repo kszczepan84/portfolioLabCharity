@@ -2,10 +2,13 @@ package pl.coderslab.charity.Controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import pl.coderslab.charity.Entity.Donation;
 import pl.coderslab.charity.Entity.Role;
 import pl.coderslab.charity.Entity.User;
@@ -24,6 +27,7 @@ public class HomeController {
     private final InstitutionRepository institutionRepository;
     private final DonationRepository donationRepository;
     private final UserRepository userRepository;
+//    private final AccountStatusUserDetailsChecker accountStatusUserDetailsChecker;
 
     @RequestMapping("/")
     public String homeAction(Model model) {
@@ -45,6 +49,14 @@ public class HomeController {
     public String loginUser() {
         return "/homepage/login";
     }
+
+//    @PostMapping("/login")
+//    @ResponseBody
+//        public String loginUserPost (Authentication authentication ){
+//            UserDetails userDetails= (UserDetails) authentication.getPrincipal();
+//            accountStatusUserDetailsChecker.check(userDetails);
+//            return "sdziala";
+//        }
 
     @RequestMapping("/successLogin")
     public String successLogin(Authentication authentication) {
